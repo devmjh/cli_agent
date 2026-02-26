@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cli-agent"
+version = "0.1.0"
+description = "Agentic CLI with enterprise-style permission gating"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "typer>=0.12.0",
+  "rich>=13.0.0",
+  "platformdirs>=4.0.0",
+  "python-dotenv>=1.0.0",
+  "httpx>=0.27.0",
+]
+
+[project.scripts]
+cli-agent = "cli_agent.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["cli_agent*"]
